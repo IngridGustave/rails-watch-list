@@ -1,16 +1,21 @@
-<header>
-    <h1>WatchList Creator</h1>
-</header>
+
+    <div class="banner" style="background-image: url(https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+      <div class="container">
+        <h1> Save any kind of movies</h1>
+      </div>
+    </div>
+
+
 <main>
     <h2>Movie Lists</h2>
-  <ul class="list-cards">
+  <ul class="list-cards" >
     <% @lists.each do |list| %>
-      <li>
+      <li style="background-image: url('<%= image_path("img_" + list.name + ".png") %>');">
         <%= link_to list.name, list_path(list) %>
       </li>
     <% end %>
     <li class="add-list">
-      <%= link_to 'add list', new_list_path %>
+      <%= link_to 'add list', new_list_path, class: 'btn btn-flat' %>
     </li>
   </ul>
 </main>
